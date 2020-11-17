@@ -1,0 +1,105 @@
+@charset "UTF-8";
+/* 초기화 */
+* { margin:0; padding:0;}
+a { text-decoration: none;}
+li { list-style: none; }
+.hidden { position: absolute; left:-99999px }
+body { background-color: rgba(0, 0, 0,0.2); font-family: sans-serif; }
+button { font-family: sans-serif; }
+.mainButton { display: inline-block; padding:0.6rem 0.7rem; min-width: 100px; text-align: center; font-size:1rem; border:0; box-sizing: border-box; border-radius: 10px; font-weight: bold;}
+/* 헤더 */
+#header {width:100%; height:100px; position: relative; background-color:rgba(0, 0, 0,0.7); box-sizing: border-box; padding:15px 10%; }
+#Logo {text-indent: -99999px; height:70px; width:100px; position: relative;}
+#Logo a {position: absolute; left:0; top:0; width:100%; height:100%; background: url(../images/Logo.png) no-repeat center center / contain; }
+#GNB { position: absolute; width:25%; right:10%; top:40px; }
+#GNB ul li { float:left; width:150px; height:50px;text-align: center;}
+#GNB ul li a { color:#fff; font-weight: bold; }
+#GNB ul li a:hover { color:gold;}
+
+/* 메인 */
+.MonitoringWrap { width:85%; margin:20px auto; background-color: #fff; box-sizing: border-box; padding:10px; position: relative;}
+.Monitoring { width:100%; box-sizing: border-box;}
+section { margin:20px 0; }
+h3 {padding-bottom: 20px; }
+/* 데이터 테이블 */
+#ListTable_wrapper { margin-top: 50px;}
+.dataTables_paginate { margin-right: 20px; }
+#ListTable { width:100%!important;  text-align: center; }
+#ListTable td { text-align: center; }
+.tableButtonBox { position: absolute; right:20px; }
+.addRow { background-color: royalblue; color:#fff; cursor: pointer;}
+.reRow { background-color: slategray; color:#fff;cursor: pointer;}
+/* scrolled page */
+.scrolling { width:100%; margin-top:10px; display: none;}
+/* rawdata */
+.rawdata::after {content:"";display: block; clear: both; }
+.chartgrid { display:grid; grid-template-columns: 30% 65%; 
+     gap: 15px 5%;
+    grid-auto-flow: row;
+}
+.RobotWrap { width:100%; height:100%; grid-row:1 / 4;}
+.RobotWrap .robotState { width:100%; height:40%; box-sizing: border-box; padding:1rem; }
+.robotState div { padding:5px 0; }
+.robotState div > span { display: inline-block; width:45%; vertical-align: middle; }
+.RobotImg { width:100%; height:60%; background: url(../images/Robot/Line1.jpg) no-repeat 60% center / cover; }
+.sensor { height:250px;}
+.conditionWrap { box-sizing: border-box; width:100%; height:20%;  position:relative; }
+.condition {min-width:80px; display: inline-block; margin-right: 10px; vertical-align: top; box-sizing: border-box; padding: 8px 12px; font-size:0.9rem;}
+.onOff { background-color: rgba(0, 255, 0, 0.7); }
+.prog {cursor: pointer; position: absolute; top:10px; right:10px; width:40px; height:40px; padding:0; border-radius: 100%; background: #fff url(../images/chart_icon.jpg) no-repeat center center / 60%;
+filter: invert(100%); color:#fff; text-indent: -90px; line-height: 40px; font-size: 0.9rem;}
+/* 데이터 차트 */
+.demo-container {
+    box-sizing: border-box;
+    width: 100%;
+    height: 80%;
+    padding: 20px 10px 15px 15px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    background: #fff;
+    background: linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -o-linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -ms-linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -moz-linear-gradient(#f6f6f6 0, #fff 50px);
+    background: -webkit-linear-gradient(#f6f6f6 0, #fff 50px);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    /* -o-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); */
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.demo-placeholder {
+    width: 100%;
+    height: 100%;
+    font-size: 12px;
+}
+.float-overaly { width:100%;}
+/* log */
+.realData { width:100%; clear:both; padding-top:20px; position: relative; box-sizing: border-box;}
+.sectionHeader {width:100%; height: 60px; }
+.tab {cursor: pointer; max-width:150px; height:100%; float:left;
+    box-sizing: border-box; padding:0 30px; line-height: 60px; font-weight: bold;}
+.on { background-color: skyblue; color:#fff; font-weight: bold;}
+.sectionBody { width:100%; height:300px;  border-top: 2px solid skyblue; background-color: #eee; }
+.eventData::before , .logData::before { content:""; display: inline-block; width:5px; height:5px; border-radius: 100%; background-color: #000;
+vertical-align: 3px; margin-right: 10px; }
+.log {width:100%; height:100%; box-sizing: border-box; padding:1.5rem 2rem; display:none; }
+.event {width:100%; height:100%; box-sizing: border-box; padding:1.5rem 2rem; }
+
+/* add_list */
+.add_List { position: fixed; right:0; bottom:-50%; width:40%; height:50%; background: #eee;  box-sizing: border-box; padding:4rem 4rem 0 4rem;}
+.add_List .exitList { position: absolute; width:40px; height: 40px; left:9px; top:9px; background: url(../images/menu_close_w.png) no-repeat center center / cover; cursor: pointer; }
+.add_List .List_topBar {position: absolute; left:0; top:0; width:100%; height: 16%; background-color: rgb(43, 48, 65);text-align: center; color:#fff;
+line-height: 3.5rem; font-size: 1.2rem; font-weight: bold;}
+.add_List form .mainButton { position: absolute; bottom:5%; left:calc(50% - 50px); font-size: 1rem; color:#fff; background-color: royalblue; cursor: pointer; }
+.add_List form { height:90%; padding:5% 0; box-sizing: border-box;}
+.add_List form .list_w { height:25%; }
+.add_List form .list_w input { width:90%; height:2rem; font-size:1rem; text-indent: 10px; }
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/jquery-3.5.1.min.js"></script>
+</head>
+
+<body>
+    <ul id="client-data">
+
+    </ul>
+    <script>
+        $.ajax({
+            url: 'acc_00001.csv',
+            async: true,
+            dataType: 'text',
+            success: function (csv) {
+                let csvLine = csv.split(/[\r?\n|\r|\n]+/);
+                console.log(csvLine.length)
+                console.log(csvLine[0].split(','))
+                let csvLinePart = new Array;
+                console.log(csvLinePart)
+                for(let i=0; i<csvLine.length; i++){
+                    csvLinePart[i] = csvLine[i].split(',')[4]
+                }
+                console.log(csvLinePart)
+            }
+        })
+        
+    </script>
+</body>
+
+</html>
